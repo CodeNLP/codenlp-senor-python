@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=42.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codenlp-senor"
+version = "0.1.0"
+authors = [
+    { name = "Michał Marcińczuk", email = "marcinczuk@gmail.com" },
+]
+description = "Code snippets and examples from Señor Python"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research"
+
+]
+keywords = ["python", "python3", "coding", "learning", "good practices"]
+license = {text = "MIT License"}
+dependencies = [
+    "numpy>=1.25, <2",
+    "loguru>=0.7, <1"
+]
+
+[project.urls]
+"Repository" = "https://github.com/CodeNLP/codenlp-senor-python"
+
+[project.optional-dependencies]
+dev = [
+    "pytest~=7.2.2",
+    "mypy==1.9.0",
+    "isort==5.12.0",
+    "black==23.1.0",
+]
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_any_generics = true
+ignore_missing_imports = true
+no_implicit_optional = true
+show_error_codes = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+warn_unused_configs = true
+no_implicit_reexport = true
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
